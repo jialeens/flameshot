@@ -1,20 +1,17 @@
 name: Packaging(Linux)
 
-on: [push, pull_request]
+on:
+  push:
+    branches: 
+      - master
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
 
-
-#on:
-#  push:
-#    branches:
-#      - master
-#    paths-ignore:
-#      - 'README.md'
-#      - 'LICENSE'
-#
-#  pull_request:
-#    paths-ignore:
-#      - 'README.md'
-#      - 'LICENSE'
+  pull_request:
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
 
 env:
   PRODUCT: flameshot
