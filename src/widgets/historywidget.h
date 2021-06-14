@@ -5,6 +5,9 @@
 #include <QObject>
 #include <QString>
 #include <QWidget>
+#include <QNetworkRequest>
+#include <QNetworkAccessManager>
+
 
 class QLayout;
 class QVBoxLayout;
@@ -14,14 +17,18 @@ class ImgUploader;
 class HistoryWidget : public QDialog
 {
     Q_OBJECT
+
+
 public:
     explicit HistoryWidget(QWidget* parent = nullptr);
     ~HistoryWidget();
-
     void loadHistory();
+private slots:
+    void handleDeleteReply(QNetworkReply* reply);
 
 private:
     void clearHistoryLayout(QLayout* layout);
+    QNetworkAccessManager* m_NetworkDelete;
 
     void addLine(const QString&, const QString&);
     void setEmptyMessage();

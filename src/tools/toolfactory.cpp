@@ -8,6 +8,7 @@
 #include "copy/copytool.h"
 #include "exit/exittool.h"
 #include "imgur/imguruploadertool.h"
+#include "ibed/ibeduploadertool.h"
 #include "launcher/applaunchertool.h"
 #include "line/linetool.h"
 #include "marker/markertool.h"
@@ -102,6 +103,9 @@ CaptureTool* ToolFactory::CreateTool(CaptureToolButton::ButtonType t,
             break;
         case CaptureToolButton::TYPE_SIZEDECREASE:
             tool = new SizeDecreaseTool(parent);
+            break;
+        case CaptureToolButton::TYPE_IBEDUPLOADER:
+            tool = new IBedUploaderTool(parent);
             break;
         default:
             tool = nullptr;

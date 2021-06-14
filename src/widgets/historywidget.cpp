@@ -12,6 +12,9 @@
 #include <QLabel>
 #include <QLayoutItem>
 #include <QMessageBox>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QNetworkRequest>
 #include <QPixmap>
 #include <QPushButton>
 #include <QScrollArea>
@@ -43,8 +46,19 @@ HistoryWidget::HistoryWidget(QWidget* parent)
     scrollArea->setWidget(widget);
     widget->setLayout(m_pVBox);
     layout->addWidget(scrollArea);
+    m_NetworkDelete = new QNetworkAccessManager(this);
+    connect(m_NetworkDelete,
+            &QNetworkAccessManager::finished,
+            this,
+            &HistoryWidget::handleDeleteReply);
 }
-
+void HistoryWidget::handleDeleteReply(QNetworkReply* reply)
+{
+    if (reply->error() == QNetworkReply::NoError) {
+        if (reply->readAll() == "true") {
+        }
+    }
+}
 HistoryWidget::~HistoryWidget()
 {
     delete m_notification;
@@ -100,8 +114,13 @@ void HistoryWidget::addLine(const QString& path, const QString& fileName)
 
     History history;
     HISTORY_FILE_NAME unpackFileName = history.unpackFileName(fileName);
-
-    QString url = "https://imgur.com/" + unpackFileName.file;
+    QString url;
+    if (unpackFileName.type == "ibed") {
+        url =
+          QStringLiteral(IBED_VIEW_URL) + unpackFileName.file.replace("#", "/");
+    } else {
+        url = "https://imgur.com/" + unpackFileName.file;
+    }
 
     // load pixmap
     QPixmap pixmap;
@@ -170,9 +189,10 @@ void HistoryWidget::addLine(const QString& path, const QString& fileName)
                 QMessageBox::Yes | QMessageBox::No)) {
             return;
         }
-        QDesktopServices::openUrl(
-          QUrl(QStringLiteral("https://imgur.com/delete/%1")
-                 .arg(unpackFileName.token)));
+        QUrl url(
+        QStringLiteral(IBED_UPLOAD_URL) + QStringLiteral("%1/%2/%3").arg(ConfigHandler().getUserName(), unpackFileName.token, "true"));
+        QNetworkRequest* request = new QNetworkRequest(url);
+        m_NetworkDelete->deleteResource(*request);
         removeCacheFile(fullFileName);
         removeLayoutItem(phbl);
     });

@@ -70,3 +70,7 @@ data/flatpak/.flatpak-builder
 
 #MacOS Crap
 .DS_Store
+/.vs
+/out
+/src/.vs
+/src/CMakeSettings.json

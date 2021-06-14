@@ -15,6 +15,13 @@ target_sources(
 )
 target_sources(
   flameshot
+        PRIVATE ibed/ibeduploader.h
+        ibed/ibeduploadertool.h
+        ibed/ibeduploader.cpp
+        ibed/ibeduploadertool.cpp
+)
+target_sources(
+  flameshot
   PRIVATE launcher/applaunchertool.h
           launcher/applauncherwidget.h
           launcher/launcheritemdelegate.h

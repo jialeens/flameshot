@@ -4,6 +4,7 @@
 #pragma once
 
 #include <QTabWidget>
+#include "src/config/ibedconf.h"
 
 class FileNameEditor;
 class ShortcutsWidget;
@@ -29,4 +30,5 @@ private:
     GeneralConf* m_generalConfig;
     VisualsEditor* m_visuals;
     QFileSystemWatcher* m_configWatcher;
+    IbedConf* m_ibedConfig;
 };

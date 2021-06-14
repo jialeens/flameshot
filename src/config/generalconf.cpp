@@ -37,7 +37,6 @@ GeneralConf::GeneralConf(QWidget* parent)
     initSaveAfterCopy();
     initUploadHistoryMaxSize();
     initUndoLimit();
-
     m_layout->addStretch();
 
     // this has to be at the end

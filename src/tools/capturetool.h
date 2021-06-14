@@ -17,6 +17,7 @@ enum class ToolType
     COPY,
     EXIT,
     IMGUR,
+    BED,
     LAUNCHER,
     LINE,
     MARKER,
@@ -32,6 +33,7 @@ enum class ToolType
     TEXT,
     UNDO,
     UPLOAD,
+    UPLOADBED,
     SIZEINCREASE,
     SIZEDECREASE
 };

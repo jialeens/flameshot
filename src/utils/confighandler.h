@@ -116,6 +116,9 @@ public:
                   const QVariant& value);
     QVariant& value(const QString& group, const QString& key);
 
+    void setUserName(const QString&);
+    QString getUserName();
+
 private:
     QString m_strRes;
     QVariant m_varRes;

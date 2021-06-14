@@ -49,7 +49,8 @@ QVector<CaptureToolButton::ButtonType> ConfigHandler::getButtons()
                 << CaptureToolButton::TYPE_UNDO << CaptureToolButton::TYPE_REDO
                 << CaptureToolButton::TYPE_COPY << CaptureToolButton::TYPE_SAVE
                 << CaptureToolButton::TYPE_EXIT
-                << CaptureToolButton::TYPE_IMAGEUPLOADER
+                // << CaptureToolButton::TYPE_IMAGEUPLOADER
+                << CaptureToolButton::TYPE_IBEDUPLOADER
 #if not defined(Q_OS_MACOS)
                 << CaptureToolButton::TYPE_OPEN_APP
 #endif
@@ -768,4 +769,13 @@ QVariant& ConfigHandler::value(const QString& group, const QString& key)
         m_settings.endGroup();
     }
     return m_varRes;
+}
+
+void ConfigHandler::setUserName(const QString& cocalluserName)
+{
+    m_settings.setValue(QStringLiteral("cocallUserName"), cocalluserName);
+}
+QString ConfigHandler::getUserName()
+{
+    return m_settings.value(QStringLiteral("cocallUserName")).toString();
 }
