@@ -1,18 +1,20 @@
 name: Packaging(MacOS)
 
-on:
-  push:
-    branches:
-      - master
-      - feature/RND-680-macos-.dmg-package-build
-    paths-ignore:
-      - 'README.md'
-      - 'LICENSE'
+on: [push, pull_request]
 
-  pull_request:
-    paths-ignore:
-      - 'README.md'
-      - 'LICENSE'
+#on:
+#  push:
+#    branches:
+#      - master
+#      - feature/RND-680-macos-.dmg-package-build
+#    paths-ignore:
+#      - 'README.md'
+#      - 'LICENSE'
+#
+#  pull_request:
+#    paths-ignore:
+#      - 'README.md'
+#      - 'LICENSE'
 
 env:
   PRODUCT: flameshot

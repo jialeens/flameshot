@@ -1,16 +1,18 @@
 name: Building(CMake)
 
-on:
-  push:
-    branches: [ master ]
-    paths-ignore:
-      - 'README.md'
-      - 'LICENSE'
-  pull_request:
-    branches: [ master ]
-    paths-ignore:
-      - 'README.md'
-      - 'LICENSE'
+on: [push, pull_request]
+
+#on:
+#  push:
+#    branches: [ master ]
+#    paths-ignore:
+#      - 'README.md'
+#      - 'LICENSE'
+#  pull_request:
+#    branches: [ master ]
+#    paths-ignore:
+#      - 'README.md'
+#      - 'LICENSE'
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
