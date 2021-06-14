@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - feature/RND-680-macos-.dmg-package-build
+      - feature/bed_thunisoft.com
     paths-ignore:
       - 'README.md'
       - 'LICENSE'

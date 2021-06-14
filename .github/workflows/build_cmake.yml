@@ -2,7 +2,7 @@ name: Building(CMake)
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, feature/bed_thunisoft.com ]
     paths-ignore:
       - 'README.md'
       - 'LICENSE'

@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master*
+      - feature/bed_thunisoft.com
     paths-ignore:
       - 'README.md'
       - 'LICENSE'
