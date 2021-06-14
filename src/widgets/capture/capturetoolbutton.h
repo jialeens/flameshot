@@ -42,7 +42,7 @@ public:
         TYPE_CIRCLECOUNT = 19,
         TYPE_SIZEINCREASE = 20,
         TYPE_SIZEDECREASE = 21,
-        TYPE_IBEDUPLOADER = 99,//避免与最新版本冲突
+        TYPE_IBEDUPLOADER = 99,
     };
     Q_ENUM(ButtonType)
 
