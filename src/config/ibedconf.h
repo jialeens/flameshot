@@ -11,11 +11,11 @@ class QVBoxLayout;
 class ButtonListView;
 class UIcolorEditor;
 
-
-class IbedConf : public QWidget {
+class IbedConf : public QWidget
+{
     Q_OBJECT
 public:
-    explicit IbedConf(QWidget *parent = nullptr);
+    explicit IbedConf(QWidget* parent = nullptr);
 
 public slots:
     void updateComponents();
@@ -23,11 +23,11 @@ public slots:
 private slots:
 
 private:
-    QVBoxLayout *m_layout;
-    QLineEdit *m_username;
-    QPushButton *m_saveButton;
-    QPushButton *m_resetButton;
-    QPushButton *m_clearButton;
+    QVBoxLayout* m_layout;
+    QLineEdit* m_username;
+    QPushButton* m_saveButton;
+    QPushButton* m_resetButton;
+    QPushButton* m_clearButton;
     void initLayout();
     void initWidgets();
     void saveIBed();

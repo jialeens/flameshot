@@ -13,6 +13,7 @@
 #include <QCursor>
 #include <QDesktopServices>
 #include <QDrag>
+#include <QFileInfo>
 #include <QGuiApplication>
 #include <QHBoxLayout>
 #include <QHttpMultiPart>
@@ -33,7 +34,6 @@
 #include <QUrlQuery>
 #include <QUuid>
 #include <QVBoxLayout>
-#include <QFileInfo>
 
 IBedUploader::IBedUploader(const QPixmap& capture, QWidget* parent)
   : QWidget(parent)
@@ -94,8 +94,9 @@ void IBedUploader::handleUploadReply(QNetworkReply* reply)
         if (userName.length() == 0) {
             userName = "jiale";
         }
-        m_deleteImageURL.setUrl(QStringLiteral(IBED_UPLOAD_URL) + QStringLiteral("%1/%2/%3")
-            .arg(userName, id, "true"));
+        m_deleteImageURL.setUrl(
+          QStringLiteral(IBED_UPLOAD_URL) +
+          QStringLiteral("%1/%2/%3").arg(userName, id, "true"));
 
         // save history
         QString imageName = m_imageURL.toString();
@@ -191,7 +192,8 @@ void IBedUploader::upload()
     imagePart.setBody(byteArray);
     multiPart->append(imagePart);
 
-    QUrl url(QStringLiteral(      IBED_UPLOAD_URL) +QStringLiteral("actions/upload"));
+    QUrl url(QStringLiteral(IBED_UPLOAD_URL) +
+             QStringLiteral("actions/upload"));
     QNetworkRequest* request = new QNetworkRequest(url);
 
     m_NetworkUpload->post(*request, multiPart);
@@ -261,11 +263,10 @@ void IBedUploader::copyURL()
 }
 
 void IBedUploader::openDeleteURL()
-{   
+{
     QUrl url(this->m_deleteImageURL.toString());
     QNetworkRequest* request = new QNetworkRequest(url);
     m_NetworkDelete->deleteResource(*request);
-   
 }
 
 void IBedUploader::copyImage()
