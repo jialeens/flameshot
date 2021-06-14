@@ -822,7 +822,7 @@ Press Space to open the side panel.</source>
     <message>
         <location filename="../../src/config/ibedconf.cpp" line="41"/>
         <source>username(cocall):</source>
-        <translation type="unfinished">CC账号</translation>
+        <translation type="unfinished">CC账号:</translation>
     </message>
 </context>
 <context>
