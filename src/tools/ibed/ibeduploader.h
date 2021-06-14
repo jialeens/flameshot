@@ -1,9 +1,9 @@
 
 #pragma once
 
-#include <QWidget>
-#include <QUrl>
 #include <QHttpMultiPart>
+#include <QUrl>
+#include <QWidget>
 
 class QNetworkReply;
 class QNetworkAccessManager;

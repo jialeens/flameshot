@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include <QTabWidget>
 #include "src/config/ibedconf.h"
+#include <QTabWidget>
 
 class FileNameEditor;
 class ShortcutsWidget;

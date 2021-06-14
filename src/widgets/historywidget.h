@@ -2,12 +2,11 @@
 #define HISTORYWIDGET_H
 
 #include <QDialog>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
 #include <QObject>
 #include <QString>
 #include <QWidget>
-#include <QNetworkRequest>
-#include <QNetworkAccessManager>
-
 
 class QLayout;
 class QVBoxLayout;
@@ -17,7 +16,6 @@ class ImgUploader;
 class HistoryWidget : public QDialog
 {
     Q_OBJECT
-
 
 public:
     explicit HistoryWidget(QWidget* parent = nullptr);

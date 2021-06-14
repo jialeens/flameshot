@@ -2,9 +2,9 @@
 // SPDX-FileCopyrightText: 2017-2019 Alejandro Sirgo Rica & Contributors
 
 #include "configwindow.h"
-#include "src/config/ibedconf.h"
 #include "src/config/filenameeditor.h"
 #include "src/config/generalconf.h"
+#include "src/config/ibedconf.h"
 #include "src/config/shortcutswidget.h"
 #include "src/config/strftimechooserwidget.h"
 #include "src/config/visualseditor.h"
