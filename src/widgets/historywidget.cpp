@@ -190,7 +190,9 @@ void HistoryWidget::addLine(const QString& path, const QString& fileName)
             return;
         }
         QUrl url(
-        QStringLiteral(IBED_UPLOAD_URL) + QStringLiteral("%1/%2/%3").arg(ConfigHandler().getUserName(), unpackFileName.token, "true"));
+          QStringLiteral(IBED_UPLOAD_URL) +
+          QStringLiteral("%1/%2/%3")
+            .arg(ConfigHandler().getUserName(), unpackFileName.token, "true"));
         QNetworkRequest* request = new QNetworkRequest(url);
         m_NetworkDelete->deleteResource(*request);
         removeCacheFile(fullFileName);

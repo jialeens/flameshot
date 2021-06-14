@@ -174,7 +174,7 @@ QVector<CaptureToolButton::ButtonType>
       CaptureToolButton::TYPE_COPY,
       CaptureToolButton::TYPE_SAVE,
       CaptureToolButton::TYPE_EXIT,
-      //CaptureToolButton::TYPE_IMAGEUPLOADER,
+      // CaptureToolButton::TYPE_IMAGEUPLOADER,
       CaptureToolButton::TYPE_IBEDUPLOADER,
 #if not defined(Q_OS_MACOS)
       CaptureToolButton::TYPE_OPEN_APP,
